@@ -3,6 +3,7 @@ using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ModelContextProtocol.Server;
 using TaskTracker.Application.Projects.Commands;
 using TaskTracker.Application.Projects.Queries;
 using TaskTracker.Infrastructure.Persistence;
@@ -45,6 +46,16 @@ public sealed class TaskTrackerHostTests : IDisposable
         await using var readScope = _host.Services.CreateAsyncScope();
         var listed = await readScope.ServiceProvider.GetRequiredService<ISender>().Send(new ListProjectsQuery());
         Assert.Equal(createdId, Assert.Single(listed).Id);
+    }
+
+    [Fact]
+    public void Build_ExposesEveryToolToMcpClients()
+    {
+        var toolNames = _host.Services.GetServices<McpServerTool>().Select(tool => tool.ProtocolTool.Name).Order();
+
+        Assert.Equal(
+            ["add_task", "archive_project", "complete_task", "create_project", "list_projects", "list_tasks", "start_task"],
+            toolNames);
     }
 
     [Fact]

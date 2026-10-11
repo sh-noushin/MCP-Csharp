@@ -3,6 +3,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using TaskTracker.Application;
 using TaskTracker.Infrastructure;
+using TaskTracker.McpServer.Tools;
 
 namespace TaskTracker.McpServer.Hosting;
 
@@ -19,7 +20,9 @@ public static class TaskTrackerHost
             .AddApplication()
             .AddInfrastructure(DatabaseLocation.ResolveConnectionString(builder.Configuration))
             .AddMcpServer()
-            .WithStdioServerTransport();
+            .WithStdioServerTransport()
+            .WithTools<ProjectTools>()
+            .WithTools<TaskTools>();
 
         return builder.Build();
     }
