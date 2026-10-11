@@ -427,5 +427,6 @@ FodyWeavers.xsd
 # Official VS Code C# Dev Kit Extension exclusion
 #*.lscache
 
-# Claude Code instructions (local only)
+# Claude Code files (local only)
+.claude/
 CLAUDE.md
