@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TaskTracker.Application/TaskTracker.Application.csproj" />
+    <Project Path="src/TaskTracker.Domain/TaskTracker.Domain.csproj" />
+    <Project Path="src/TaskTracker.Infrastructure/TaskTracker.Infrastructure.csproj" />
+    <Project Path="src/TaskTracker.McpServer/TaskTracker.McpServer.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TaskTracker.Application.Tests/TaskTracker.Application.Tests.csproj" />
+    <Project Path="tests/TaskTracker.Domain.Tests/TaskTracker.Domain.Tests.csproj" />
+    <Project Path="tests/TaskTracker.Infrastructure.Tests/TaskTracker.Infrastructure.Tests.csproj" />
+    <Project Path="tests/TaskTracker.McpServer.Tests/TaskTracker.McpServer.Tests.csproj" />
+    <Project Path="tests/TaskTracker.TestSupport/TaskTracker.TestSupport.csproj" />
+  </Folder>
+</Solution>
