@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <ProjectReference Include="..\..\src\TaskTracker.Domain\TaskTracker.Domain.csproj" />
-    <ProjectReference Include="..\TaskTracker.TestSupport\TaskTracker.TestSupport.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="coverlet.msbuild">
