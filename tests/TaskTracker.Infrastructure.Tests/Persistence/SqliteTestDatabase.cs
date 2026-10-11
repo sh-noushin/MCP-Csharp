@@ -14,7 +14,7 @@ internal sealed class SqliteTestDatabase : IDisposable
         _connection.Open();
 
         using var context = CreateContext();
-        context.Database.EnsureCreated();
+        context.Database.Migrate();
     }
 
     public TaskTrackerDbContext CreateContext() =>
