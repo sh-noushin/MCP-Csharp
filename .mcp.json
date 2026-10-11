@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "task-tracker": {
+      "command": "dotnet",
+      "args": ["src/TaskTracker.McpServer/bin/Debug/net10.0/TaskTracker.McpServer.dll"]
+    }
+  }
+}
