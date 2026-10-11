@@ -10,4 +10,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
   </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="TaskTracker.Infrastructure.Tests" />
+  </ItemGroup>
 </Project>
